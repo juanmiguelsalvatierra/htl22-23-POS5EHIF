@@ -1,6 +1,5 @@
 public class Main {
-
-    public void Main(String[] args){
+    public static void main(String[] args) {
         Restaurant r = new Restaurant();
         r.Go();
     }

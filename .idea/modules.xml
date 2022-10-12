@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Restaurant/Restaurant.iml" filepath="$PROJECT_DIR$/Restaurant/Restaurant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Skipiste/Skipiste.iml" filepath="$PROJECT_DIR$/Skipiste/Skipiste.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/htl22-23-POS5EHIF.iml" filepath="$PROJECT_DIR$/.idea/htl22-23-POS5EHIF.iml" />
+    </modules>
+  </component>
+</project>
