@@ -129,7 +129,6 @@ public class Restaurant {
                 if(bestellteKunden > 0) {
                     avgSum = avgSum / bestellteKunden;
                 }
-                System.out.println(bestellteKunden);
                 System.out.println("Insgesamte Durchschnittliche Wartezeit: " + avgSum);
                 bestellteKunden = 0;
                 System.out.println("Anzahl der Bearbeiteten Bestellungen: " + anzBestellungen);
