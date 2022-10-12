@@ -108,7 +108,6 @@ public class Restaurant {
                     kunden.add(tempKunde);
                     wurdeBestellt = false;
                     anzBestellungen++;
-                    bestellteKunden++;
                 }
             }
             if(time % 30 == 0) {
