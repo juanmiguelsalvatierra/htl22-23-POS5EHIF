@@ -36,5 +36,8 @@ public class Pokertisch {
         Collections.sort(winList, new CompareWins());
         Spieler gameWinner = winList.getFirst();
         System.out.println(gameWinner.name + " hat das Spiel gewonnen! Anzahl der Siege: " + gameWinner.anzWins);
+        for (Spieler item : spielerList){
+            System.out.println(item.name + " hat das Spiel beendet mit " + item.anzWins + " Siegen");
+        }
     }
 }
