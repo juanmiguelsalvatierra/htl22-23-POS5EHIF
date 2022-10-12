@@ -21,7 +21,7 @@ public class Pokertisch {
     }
     public void Go(){
         Collections.shuffle(stapel);
-        while(stapel.size() > spielerList.size()){
+        while(stapel.size() >= spielerList.size()){
             for(Spieler item : spielerList){
                 item.currentKarte = stapel.pop();
                 System.out.println("--" + item.name + " zieht die Karte " + item.currentKarte.farbe + " " + item.currentKarte.wert.wert);
