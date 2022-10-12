@@ -14,16 +14,18 @@ public class Kunde {
     }
 
     public boolean BestellProcess(){
-        waitingCount++;
-        if(waiting >= waitingCount){
+        this.waitingCount++;
+        if(waitingCount == waiting){
+            this.waitingCount = 0;
             return true;
         }
         return false;
     }
 
     public boolean Bestellung(){
-        orderTimeCount++;
-        if(orderTimeCount >= orderTime){
+        this.orderTimeCount++;
+        if(orderTimeCount == orderTime){
+            this.orderTimeCount = 0;
             return true;
         }
         return false;
@@ -33,6 +35,8 @@ public class Kunde {
         for(Integer temp : avgTimeList){
             avg += temp;
         }
-        avg = avg / avgTimeList.size();
+        if(avgTimeList.size() > 0) {
+            avg = avg / avgTimeList.size();
+        }
     }
 }
