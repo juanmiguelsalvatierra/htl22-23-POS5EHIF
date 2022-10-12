@@ -89,6 +89,9 @@ public class Restaurant {
             kunden.remove(tempList); // Kunden werden aus der Kundenliste entfernt
             tempList.clear();
             if(!schlange.isEmpty()) { // Abfrage ob die Schlange nicht leer ist
+                for(Kunde item : schlange){
+                    item.avgWaitingTime++;
+                }
                 if(!wurdeBestellt) {
                     tempKunde = schlange.getFirst();
                     tempKunde.waiting = rnd.nextInt(1, 4); // Erster Besteller bekommt eine Bearbeitungszeit
@@ -99,6 +102,8 @@ public class Restaurant {
             if(wurdeBestellt){
                 if(tempKunde.BestellProcess()){
                     kunden.add(tempKunde);
+
+                    wurdeBestellt = false;
                 }
             }
         }
