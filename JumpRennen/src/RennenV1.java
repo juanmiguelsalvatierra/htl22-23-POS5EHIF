@@ -12,7 +12,7 @@ public class RennenV1 {
     }
 
     public void Go(){
-        while(strecke[19].size() < 20){
+        while(strecke[19].size() < 2){
             for(int i = 0; i < 20; i++){
                 for(Spieler item : strecke[i]){
                     item.Jump();
@@ -23,18 +23,12 @@ public class RennenV1 {
                     item.jumped = false;
                 }
             }
-            /*for(int i = 0; i < 20; i++){
+            for(int i = 0; i < 20; i++){
                 for(int j = 0; j < strecke[i].size(); j++){
                     Spieler temp = strecke[i].get(j);
                     strecke[temp.currentPos].add(temp);
                 }
-            }*/
-            for(int i = 0; i < 20; i++){
-                for(Spieler item : strecke[i]){
-                    System.out.println(item.currentPos);;
-                }
             }
-
             for(int i = 0; i < 20; i++){
                 for(Spieler item : strecke[i]){
                     if(!strecke[i].isEmpty()) {
@@ -43,5 +37,6 @@ public class RennenV1 {
                 }
             }
         }
+        System.out.println("Das Rennen ist beendet");
     }
 }

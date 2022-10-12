@@ -16,14 +16,17 @@ public class Spieler {
             if(currentPos == 0){
                 this.currentPos += rnd.nextInt(3) + 1;
                 this.jumped = true;
+                if(currentPos > 20){
+                    this.currentPos = 20;
+                }
                 return;
             }
             if(currentPos != 0){
                 this.currentPos += rnd.nextInt(4);
                 this.jumped = true;
-                /*if(currentPos > 20){
+                if(currentPos > 20){
                     this.currentPos = 20;
-                }*/
+                }
                 return;
             }
 
