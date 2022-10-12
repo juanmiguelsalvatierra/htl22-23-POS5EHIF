@@ -24,20 +24,22 @@ public class Pokertisch {
         while(stapel.size() > spielerList.size()){
             for(Spieler item : spielerList){
                 item.currentKarte = stapel.pop();
-                System.out.println(item.name + " zieht die Karte " + item.currentKarte.farbe.bez + " " + item.currentKarte.wert.wert);
+                System.out.println("--" + item.name + " zieht die Karte " + item.currentKarte.farbe + " " + item.currentKarte.wert.wert);
             }
             LinkedList<Spieler> tempList = spielerList;
             Collections.sort(tempList, new CompareKarte());
             Spieler winner = tempList.getFirst();
             winner.anzWins++;
-            System.out.println(winner.name + " hat die Runde gewonnen! Anzahl der Siege: " + winner.anzWins);
+            System.out.println("+++++++ " + winner.name + " hat die Runde gewonnen! Anzahl der Siege: " + winner.anzWins + " +++++++");
         }
         LinkedList<Spieler> winList = spielerList;
         Collections.sort(winList, new CompareWins());
         Spieler gameWinner = winList.getFirst();
-        System.out.println(gameWinner.name + " hat das Spiel gewonnen! Anzahl der Siege: " + gameWinner.anzWins);
+        System.out.println("############################# " + gameWinner.name + " HAT DAS SPIEL GEWONNEN! ANZAHL DER SIEGE: " + gameWinner.anzWins + " #############################");
         for (Spieler item : spielerList){
             System.out.println(item.name + " hat das Spiel beendet mit " + item.anzWins + " Siegen");
         }
     }
+
+
 }
