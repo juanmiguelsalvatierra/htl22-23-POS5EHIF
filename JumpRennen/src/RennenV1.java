@@ -13,7 +13,7 @@ public class RennenV1 {
     }
 
     public void Go(){
-        while(strecke[19].size() < 2){
+        while(strecke[19].size() < 20){
             for(int i = 0; i < 20; i++){
                 for(Spieler item : strecke[i]){
                     item.Jump();
