@@ -108,6 +108,7 @@ public class Restaurant {
                     kunden.add(tempKunde);
                     wurdeBestellt = false;
                     anzBestellungen++;
+                    bestellteKunden++;
                 }
             }
             if(time % 30 == 0) {
@@ -122,12 +123,13 @@ public class Restaurant {
                     item.CountAvg();
                     if(item.avg > 0){
                         avgSum += item.avg;
-                        bestellteKunden++;
+                        item.avg = 0;
                     }
                 }
                 if(bestellteKunden > 0) {
                     avgSum = avgSum / bestellteKunden;
                 }
+                System.out.println(bestellteKunden);
                 System.out.println("Insgesamte Durchschnittliche Wartezeit: " + avgSum);
                 bestellteKunden = 0;
                 System.out.println("Anzahl der Bearbeiteten Bestellungen: " + anzBestellungen);
