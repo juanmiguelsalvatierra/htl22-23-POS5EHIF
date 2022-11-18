@@ -1,3 +1,3 @@
-public interface IAnfrage {
-    void Wetter();
+public interface IRequestData {
+    void getData();
 }

@@ -1,15 +1,16 @@
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class WetterZentrale implements IRespondData {
-    IRequestData[] wetterStation = new WetterStation[5];
-    HashMap<String, WetterDaten> wetterdaten = new HashMap<String, WetterDaten>();
+    IRequestData[] wetterStation = new Wetterstation[5];
+    HashMap<String, Wetterdaten> wetterdaten = new HashMap<String, Wetterdaten>();
 
     public WetterZentrale(){
-        wetterStation[0] = new WetterStation("Wien", this);
-        wetterStation[1] = new WetterStation("Moskua", this);
-        wetterStation[2] = new WetterStation("Tokyo", this);
-        wetterStation[3] = new WetterStation("Bangkok", this);
-        wetterStation[4] = new WetterStation("Kapstadt", this);
+        wetterStation[0] = new Wetterstation("Wien", this);
+        wetterStation[1] = new Wetterstation("Moskua", this);
+        wetterStation[2] = new Wetterstation("Tokyo", this);
+        wetterStation[3] = new Wetterstation("Bangkok", this);
+        wetterStation[4] = new Wetterstation("Kapstadt", this);
     }
 
     public void werteAbfragen(){
@@ -20,7 +21,7 @@ public class WetterZentrale implements IRespondData {
 
     // Diese Methode wird von einer Wetterstation aufgerufen
     @Override
-    public void data(WetterDaten data) {
+    public void data(Wetterdaten data) {
         // sind alle Wetterdaten eingelangt?
         if(wetterdaten.size() < 5) { // nein daten eintragen
             wetterdaten.put(data.getStadt(), data);

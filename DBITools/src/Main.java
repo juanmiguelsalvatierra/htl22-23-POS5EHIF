@@ -13,7 +13,7 @@ public class Main {
         System.out.println(potenz_mod_n(3,128,5));
         System.out.println(potenz_mod_n(2,128,5));
         System.out.println(potenz_mod_n(3,3,5));
-        System.out.println("----------------IsPrim----------------");
+        System.out.println("----------------Primzahl Check----------------");
         System.out.println(isPrim(19));
         System.out.println(isPrim(9973));
         System.out.println(isPrim(65537));
@@ -21,6 +21,12 @@ public class Main {
         System.out.println(isPrim(58081));
         System.out.println(isPrim(63001));
         System.out.println(isPrim(65535));
+        System.out.println("----------------Schlüssel----------------");
+        long m = 1123;
+        long c = ver(m, 19, 1271);
+        System.out.println("Message: " + m);
+        System.out.println("Chiffre: " + ver(m, 19, 1271));
+        System.out.println("Entschlüsselt: " + ent(c, 379, 1271));
     }
 
     public static long ggt(long a, long b){
@@ -56,9 +62,21 @@ public class Main {
             if (b == 1 || b == (n-1)) {
                 temp = true;
             } else {
-                temp = false;
+                return false;
             }
         }
         return temp;
+    }
+
+    public static long ver(long m, long k1, long n){
+        long c = potenz_mod_n(m, k1, n);
+
+        return c;
+    }
+
+    public static long ent(long c, long k2, long n){
+        long m = potenz_mod_n(c, k2, n);
+
+        return m;
     }
 }

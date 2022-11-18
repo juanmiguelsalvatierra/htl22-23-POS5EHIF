@@ -1,3 +1,3 @@
-public interface ISchicken {
-    void data(WetterDaten data);
+public interface IRespondData {
+    void data(Wetterdaten data);
 }
