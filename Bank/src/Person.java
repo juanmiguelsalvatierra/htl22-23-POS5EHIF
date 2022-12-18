@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Person implements Runnable{
+public class Person{
     public String name;
     public IBuchung ib;
     public static Random rnd = new Random();
@@ -9,9 +9,9 @@ public class Person implements Runnable{
         this.ib = ib;
     }
 
-    @Override
+    /*@Override
     public void run() {
         int wert = rnd.nextInt();
         ib.Buchen()
-    }
+    }*/
 }
