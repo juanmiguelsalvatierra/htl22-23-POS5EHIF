@@ -13,7 +13,8 @@ public class Sim {
                 int segel = rnd.nextInt(2) + 1;
                 teilnehmer.add(new Segelboot(i+1, speed, segel));
             } else {
-                int laenge = rnd.nextInt()
+                int laenge = rnd.nextInt(101) + 500;
+                teilnehmer.add(new Kajak(i+1, speed, laenge));
             }
         }
     }

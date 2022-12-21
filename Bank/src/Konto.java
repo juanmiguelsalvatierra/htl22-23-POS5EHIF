@@ -12,6 +12,11 @@ public class Konto implements IBuchung{
         this.stand = stand;
 
         ber.add(new Person("Matthias", this));
+
+        for(Person item : ber){
+            Thread t = new Thread(item);
+            t.start();
+        }
     }
 
     @Override
