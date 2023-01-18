@@ -1,3 +1,9 @@
 public enum Zustand {
-    Start(), Z1(), Z2(), Z3(), ZRetour();
+    Start(0), Z1(1), Z2(2), Z3(3), ZRetour(4);
+
+    int index;
+
+    Zustand(int index) {
+        this.index = index;
+    }
 }

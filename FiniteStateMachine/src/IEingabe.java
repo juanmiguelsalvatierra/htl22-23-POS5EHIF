@@ -1,3 +1,3 @@
 public interface IEingabe {
-    void Eingabe();
+    void Eingabe(Eingabe e);
 }
