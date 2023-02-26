@@ -1,3 +1,3 @@
 public enum EAusgabe {
-    Null, Error, Flasche, Eins, Zwei, Drei;
+    Null, Error, Flasche, Eins, Zwei, Drei, Return;
 }

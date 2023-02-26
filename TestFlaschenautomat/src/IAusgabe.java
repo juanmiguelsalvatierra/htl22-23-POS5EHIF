@@ -1,2 +1,3 @@
-public class IAusgabe {
+public interface IAusgabe {
+    void Ausgabe(EZustand zustand);
 }
