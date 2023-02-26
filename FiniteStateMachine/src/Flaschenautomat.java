@@ -10,7 +10,7 @@ public class Flaschenautomat implements IAusgabe{
     public void Go(){
         Scanner s = new Scanner(System.in);
         while(true){
-            System.out.println("Gib eine Zahl ein 1-3");
+            System.out.println("Gib geben Sie eine Zahl ein (1: 1 Euro, 2: 2 Euro, 3: Knopf)");
             int eingabe = Integer.parseInt(s.nextLine());
             switch (eingabe){
                 case 1 : stateMachine.Eingabe(Eingabe.Eins);
@@ -26,6 +26,9 @@ public class Flaschenautomat implements IAusgabe{
     }
     @Override
     public void Ausgabe(Ausgabe[] a) {
-        System.out.println(a);
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i] + ", ");
+        }
+        System.out.println();
     }
 }

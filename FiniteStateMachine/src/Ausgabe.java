@@ -1,4 +1,4 @@
 public enum Ausgabe {
-    Eins(), Zwei(), Drei(), Drink(), Retour(), Error();
+    Null(), Eins(), Zwei(), Drei(), Drink(), Retour(), Error();
 
 }
