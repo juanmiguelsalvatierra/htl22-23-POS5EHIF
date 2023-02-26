@@ -3,5 +3,6 @@ public class Main {
         Flaschenautomat fa = new Flaschenautomat();
         StateMachine s = new StateMachine(fa);
         fa.addListener(s);
+        fa.Go();
     }
 }
