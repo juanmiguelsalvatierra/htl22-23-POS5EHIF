@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Automat a = new Automat();
+        StateMachine sm = new StateMachine(a);
+        a.addListener(sm);
+        a.Go();
     }
 }
