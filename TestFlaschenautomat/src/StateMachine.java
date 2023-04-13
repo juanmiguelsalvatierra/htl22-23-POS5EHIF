@@ -3,15 +3,10 @@ import java.util.LinkedList;
 
 public class StateMachine implements IEingabe {
     IAusgabe aut;
-    LinkedList<LinkedList<EZ>> states = new LinkedList<>();
     HashMap<EZustand, HashMap<EEingabe, EZustand>> hashstates = new HashMap<>();
-    int currentstate = 0;
+    EZustand currentstate = EZustand.Start;
     public StateMachine(IAusgabe aut){
         this.aut = aut;
-
-        for (int i = 0; i < 10; i++) {
-            states.add(new LinkedList<>());
-        }
         hashstates.put(EZustand.Start, new HashMap<>());
         hashstates.put(EZustand.Z1, new HashMap<>());
         hashstates.put(EZustand.Z2, new HashMap<>());
@@ -27,56 +22,46 @@ public class StateMachine implements IEingabe {
         hashstates.get(EZustand.Start).put(EEingabe.Zwei, EZustand.Z2);
         hashstates.get(EZustand.Start).put(EEingabe.Knopf, EZustand.Z1);
 
-        hashstates.get(EZustand.Z1).put(EEingabe.Knopf, EZustand.Z1);
+        hashstates.get(EZustand.Z1).put(EEingabe.Eins, EZustand.Z2);
+        hashstates.get(EZustand.Z1).put(EEingabe.Zwei, EZustand.Z3);
+        hashstates.get(EZustand.Z1).put(EEingabe.Knopf, EZustand.Z5);
 
-        states.get(0).add(new EZ(EEingabe.Eins, EZustand.Z1));
-        states.get(0).add(new EZ(EEingabe.Zwei, EZustand.Z2));
-        states.get(0).add(new EZ(EEingabe.Knopf, EZustand.Z1));
+        hashstates.get(EZustand.Z2).put(EEingabe.Eins, EZustand.Z3);
+        hashstates.get(EZustand.Z2).put(EEingabe.Zwei, EZustand.Zhoch);
+        hashstates.get(EZustand.Z2).put(EEingabe.Knopf, EZustand.Z6);
 
-        states.get(1).add(new EZ(EEingabe.Eins, EZustand.Z2));
-        states.get(1).add(new EZ(EEingabe.Zwei, EZustand.Z3));
-        states.get(1).add(new EZ(EEingabe.Knopf, EZustand.Z5));
+        hashstates.get(EZustand.Z3).put(EEingabe.Eins, EZustand.Zhoch);
+        hashstates.get(EZustand.Z3).put(EEingabe.Zwei, EZustand.Zhoch);
+        hashstates.get(EZustand.Z3).put(EEingabe.Knopf, EZustand.ZF);
 
-        states.get(2).add(new EZ(EEingabe.Eins, EZustand.Z3));
-        states.get(2).add(new EZ(EEingabe.Zwei, EZustand.Zhoch));
-        states.get(2).add(new EZ(EEingabe.Knopf, EZustand.Z6));
+        hashstates.get(EZustand.Z4).put(EEingabe.Eins, EZustand.Z1);
+        hashstates.get(EZustand.Z4).put(EEingabe.Zwei, EZustand.Z2);
+        hashstates.get(EZustand.Z4).put(EEingabe.Knopf, EZustand.Z4);
 
-        states.get(3).add(new EZ(EEingabe.Eins, EZustand.Zhoch));
-        states.get(3).add(new EZ(EEingabe.Zwei, EZustand.Zhoch));
-        states.get(3).add(new EZ(EEingabe.Knopf, EZustand.ZF));
+        hashstates.get(EZustand.Z5).put(EEingabe.Eins, EZustand.Z2);
+        hashstates.get(EZustand.Z5).put(EEingabe.Zwei, EZustand.Z3);
+        hashstates.get(EZustand.Z5).put(EEingabe.Knopf, EZustand.Z5);
 
-        states.get(4).add(new EZ(EEingabe.Eins, EZustand.Z1));
-        states.get(4).add(new EZ(EEingabe.Zwei, EZustand.Z2));
-        states.get(4).add(new EZ(EEingabe.Knopf, EZustand.Z4));
+        hashstates.get(EZustand.Z6).put(EEingabe.Eins, EZustand.Z3);
+        hashstates.get(EZustand.Z6).put(EEingabe.Zwei, EZustand.Zhoch);
+        hashstates.get(EZustand.Z6).put(EEingabe.Knopf, EZustand.Z6);
 
-        states.get(5).add(new EZ(EEingabe.Eins, EZustand.Z2));
-        states.get(5).add(new EZ(EEingabe.Zwei, EZustand.Z3));
-        states.get(5).add(new EZ(EEingabe.Knopf, EZustand.Z5));
+        hashstates.get(EZustand.Zhoch).put(EEingabe.Eins, EZustand.Zhoch);
+        hashstates.get(EZustand.Zhoch).put(EEingabe.Zwei, EZustand.Zhoch);
+        hashstates.get(EZustand.Zhoch).put(EEingabe.Knopf, EZustand.ZR);
 
-        states.get(6).add(new EZ(EEingabe.Eins, EZustand.Z3));
-        states.get(6).add(new EZ(EEingabe.Zwei, EZustand.Zhoch));
-        states.get(6).add(new EZ(EEingabe.Knopf, EZustand.Z6));
+        hashstates.get(EZustand.ZF).put(EEingabe.Eins, EZustand.Z1);
+        hashstates.get(EZustand.ZF).put(EEingabe.Zwei, EZustand.Z2);
+        hashstates.get(EZustand.ZF).put(EEingabe.Knopf, EZustand.Z4);
 
-        states.get(7).add(new EZ(EEingabe.Eins, EZustand.Zhoch));
-        states.get(7).add(new EZ(EEingabe.Zwei, EZustand.Zhoch));
-        states.get(7).add(new EZ(EEingabe.Knopf, EZustand.ZR));
-
-        states.get(8).add(new EZ(EEingabe.Eins, EZustand.Z1));
-        states.get(8).add(new EZ(EEingabe.Zwei, EZustand.Z2));
-        states.get(8).add(new EZ(EEingabe.Knopf, EZustand.Z4));
-
-        states.get(9).add(new EZ(EEingabe.Eins, EZustand.Z1));
-        states.get(9).add(new EZ(EEingabe.Zwei, EZustand.Z2));
-        states.get(9).add(new EZ(EEingabe.Knopf, EZustand.Z4));
+        hashstates.get(EZustand.ZR).put(EEingabe.Eins, EZustand.Z1);
+        hashstates.get(EZustand.ZR).put(EEingabe.Zwei, EZustand.Z2);
+        hashstates.get(EZustand.ZR).put(EEingabe.Knopf, EZustand.Z4);
     }
     @Override
     public void Eingabe(EEingabe eingabe) {
-        for(EZ item : states.get(currentstate)){
-            if(item.eing.equals(eingabe)){
-                aut.Ausgabe(item.zust);
-                break;
-                currentstate =
-            }
-        }
+        EZustand temp = hashstates.get(currentstate).get(eingabe);
+        aut.Ausgabe(temp);
+        currentstate = temp;
     }
 }

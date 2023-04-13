@@ -2,8 +2,12 @@ import java.util.Scanner;
 
 public class Automat implements IAusgabe{
     IEingabe statemachine;
-    public Automat(){
+    public void addListener(IEingabe statemachine){
+        this.statemachine = statemachine;
+    }
+    public void Go(){
         while(true){
+            System.out.println("Bitte geben Sie eine Zahl ein");
             Scanner sc = new Scanner(System.in);
             int eingabe = Integer.parseInt(sc.nextLine());
             switch (eingabe){
@@ -21,6 +25,9 @@ public class Automat implements IAusgabe{
     }
     @Override
     public void Ausgabe(EZustand zustand) {
+        for(EAusgabe item : zustand.ausg){
+            System.out.println(item.text);
+        }
 
     }
 }

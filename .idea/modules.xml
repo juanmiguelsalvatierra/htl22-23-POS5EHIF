@@ -17,6 +17,8 @@
       <module fileurl="file://$PROJECT_DIR$/Skipiste/Skipiste.iml" filepath="$PROJECT_DIR$/Skipiste/Skipiste.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sprungturm/Sprungturm.iml" filepath="$PROJECT_DIR$/Sprungturm/Sprungturm.iml" />
       <module fileurl="file://$PROJECT_DIR$/Stadtsim/Stadtsim.iml" filepath="$PROJECT_DIR$/Stadtsim/Stadtsim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestFSMKaffee/TestFSMKaffee.iml" filepath="$PROJECT_DIR$/TestFSMKaffee/TestFSMKaffee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestFSMUhr/TestFSMUhr.iml" filepath="$PROJECT_DIR$/TestFSMUhr/TestFSMUhr.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestFlaschenautomat/TestFlaschenautomat.iml" filepath="$PROJECT_DIR$/TestFlaschenautomat/TestFlaschenautomat.iml" />
       <module fileurl="file://$PROJECT_DIR$/Wassersport/Wassersport.iml" filepath="$PROJECT_DIR$/Wassersport/Wassersport.iml" />
       <module fileurl="file://$PROJECT_DIR$/Wetterstation/Wetterstation.iml" filepath="$PROJECT_DIR$/Wetterstation/Wetterstation.iml" />
